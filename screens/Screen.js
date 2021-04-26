@@ -1,9 +1,8 @@
 import * as React from 'react';
-import {View, Text, TouchableOpacity, Image,StatusBar} from 'react-native';
+import {View, Text, TouchableOpacity, Image, StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import one from './Screen';
-import second from './Ashiq'
-
+import second from './Ashiq';
 
 import {
   createDrawerNavigator,
@@ -13,66 +12,72 @@ import {
 
 function Feed({navigation}) {
   return (
-
-
-
     <View style={{flex: 1}}>
-      <StatusBar  backgroundColor="black"/>
-  <View style={{flex:1,backgroundColor:'black'}}>
-            <View style={{backgroundColor:'black',height:'13%',width:'100%'}}>
-          <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center',marginVertical:30}}>
-            <Text style={{color:'#ffff',fontSize:30,fontWeight:'bold'}}>Puzzle Disney</Text></View>
-            </View>
-            <View style={{borderWidth:1,height:'65%'}}>
-              <Image source={require('../assests/images/puzz.png')} style={{width:"93%",height:"100%",margin:10}}/>
-            </View>
+      <StatusBar backgroundColor="black" />
+      <View style={{flex: 1, backgroundColor: 'black'}}>
+        <View style={{backgroundColor: 'black', height: '13%', width: '100%'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginVertical: 30,
+            }}>
+            <Text style={{color: '#ffff', fontSize: 30, fontWeight: 'bold'}}>
+              Puzzle Disney
+            </Text>
+          </View>
+        </View>
+        <View style={{borderWidth: 1, height: '65%'}}>
+          <Image
+            source={require('../assests/images/puzz.png')}
+            style={{width: '93%', height: '100%', margin: 10}}
+          />
+        </View>
 
-    <View style={{marginTop:20}}>
-
-  
-            <TouchableOpacity
-        style={{
-          backgroundColor: 'rgba(255,20,50,0.7)',
-          marginTop: '5%',
-          width: '90%',
-          alignSelf: 'center',
-          borderRadius: 30,
-        }}
-        onPress={()=>{navigation.navigate('second')}}>
-        <Text
-          style={{
-            padding: 15,
-            textAlign: 'center',
-            fontSize: 22,
-            color: 'rgb(255,255,255)',
-            fontFamily: 'serif',
-          }}>
-          START NOW
-        </Text>
-      </TouchableOpacity>
-    
+        <View style={{marginTop: 20}}>
+          <TouchableOpacity
+            style={{
+              backgroundColor: 'rgba(255,20,50,0.7)',
+              marginTop: '5%',
+              width: '90%',
+              alignSelf: 'center',
+              borderRadius: 30,
+            }}
+            onPress={() => {
+              navigation.navigate('second');
+            }}>
+            <Text
+              style={{
+                padding: 15,
+                textAlign: 'center',
+                fontSize: 22,
+                color: 'rgb(255,255,255)',
+                fontFamily: 'serif',
+              }}>
+              START NOW
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
-        
-            </View> 
-            </View>
-            
-         
-             
-
-            
-   
- 
+    </View>
   );
 }
 
 function CustomDrawerContent(props) {
   return (
     <View style={{backgroundColor: '#FFFF', height: '100%', width: '100%'}}>
-        <View style={{height:'20%',backgroundColor:'#065e54',alignItems:'center',justifyContent:'center'}}>
-          <Text style={{fontSize:25,color:'#FFFF'}}>Puzzle Disney</Text>
-        </View>
-         <DrawerContentScrollView >
-         <View style={{marginTop: 15}}>
+      <View
+        style={{
+          height: '20%',
+          backgroundColor: '#065e54',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <Text style={{fontSize: 25, color: '#FFFF'}}>Puzzle Disney</Text>
+      </View>
+      <DrawerContentScrollView>
+        <View style={{marginTop: 15}}>
           <TouchableOpacity
             style={{flexDirection: 'row'}}
             onPress={() => props.navigation.navigate('one')}>
@@ -87,8 +92,7 @@ function CustomDrawerContent(props) {
                 paddingLeft: 10,
                 marginTop: 4,
                 fontWeight: 'bold',
-                color:"#065e54"
-               
+                color: '#065e54',
               }}>
               My Profile
             </Text>
@@ -118,11 +122,7 @@ function CustomDrawerContent(props) {
             <DrawerItem label="" />
           </TouchableOpacity>
         </View>
-    
-        
-        </DrawerContentScrollView>
-
-    
+      </DrawerContentScrollView>
     </View>
   );
 }
@@ -136,7 +136,6 @@ function MyDrawer() {
       <Drawer.Screen name="Feed" component={Feed} />
       <Drawer.Screen name="one" component={one} />
       <Drawer.Screen name="second" component={second} />
-      
     </Drawer.Navigator>
   );
 }

@@ -26,14 +26,20 @@ const Images = [
     img: 'https://1tb.favim.com/preview/7/729/7298/72989/7298962.jpg',
   },
 ];
-export default function GameScreen2({navigation}) {
+let temp = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+export default function GameScreen3({navigation}) {
   const [hidden, setHidden] = React.useState(0); // piece to obscure
-  const [pieces, setPieces] = React.useState([0, 1, 8, 4, 7, 5, 6, 3, 2]);
-
+  const [pieces, setPieces] = React.useState([4, 1, 7, 2, 3, 5, 0, 6, 8]);
   const [imagelist, setImagelist] = useState(4);
+  const [showBtn, setShowBtn] = useState(false);
   const renderLoading = React.useCallback(<ActivityIndicator />, []);
   const onChange = React.useCallback(
     (nextPieces, nextHidden) => {
+      if (JSON.stringify(nextPieces) === JSON.stringify(temp)) {
+        setShowBtn(true);
+      } else {
+        setShowBtn(false);
+      }
       setPieces(nextPieces);
       setHidden(nextHidden);
     },
@@ -50,7 +56,7 @@ export default function GameScreen2({navigation}) {
             alignSelf: 'center',
             marginVertical: 15,
           }}>
-          PUZZLE DISNEY
+          LEVEL 4
         </Text>
       </View>
       <View style={{height: '65%', backgroundColor: 'black'}}>
@@ -64,35 +70,36 @@ export default function GameScreen2({navigation}) {
           renderLoading={renderLoading}
         />
       </View>
-
-      <TouchableOpacity
-        style={{
-          backgroundColor: 'rgba(255,20,50,0.7)',
-          marginTop: '5%',
-          width: '90%',
-          alignSelf: 'center',
-          borderRadius: 30,
-        }}
-        onPress={() =>
-          // setImagelist((prevState) => {
-          //   if (prevState === 4) {
-          //     return 1;
-          //   }
-          //   return prevState + 1;
-          // })
-          navigation.navigate('gameScreen4')
-        }>
-        <Text
+      {showBtn ? (
+        <TouchableOpacity
           style={{
-            padding: 15,
-            textAlign: 'center',
-            fontSize: 22,
-            color: 'rgb(255,255,255)',
-            fontFamily: 'serif',
-          }}>
-          Next Round
-        </Text>
-      </TouchableOpacity>
+            backgroundColor: 'rgba(255,20,50,0.7)',
+            marginTop: '5%',
+            width: '90%',
+            alignSelf: 'center',
+            borderRadius: 30,
+          }}
+          onPress={() =>
+            // setImagelist((prevState) => {
+            //   if (prevState === 4) {
+            //     return 1;
+            //   }
+            //   return prevState + 1;
+            // })
+            navigation.navigate('gameScreen4')
+          }>
+          <Text
+            style={{
+              padding: 15,
+              textAlign: 'center',
+              fontSize: 22,
+              color: 'rgb(255,255,255)',
+              fontFamily: 'serif',
+            }}>
+            Next Round
+          </Text>
+        </TouchableOpacity>
+      ) : null}
     </View>
   );
 }

@@ -3,6 +3,12 @@ import {View, Text, TouchableOpacity, Image, StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import one from './Screen';
 import second from './Ashiq';
+import gameScreen1 from './gameScreen1';
+import gameScreen2 from './gameScreen2';
+import gameScreen3 from './gameScreen3';
+import gameScreen4 from './gameScreen4';
+import Result from './Result';
+// import second from './Ashiq';
 
 import {
   createDrawerNavigator,
@@ -136,6 +142,11 @@ function MyDrawer() {
       <Drawer.Screen name="Feed" component={Feed} />
       <Drawer.Screen name="one" component={one} />
       <Drawer.Screen name="second" component={second} />
+      <Drawer.Screen name="gameScreen1" component={gameScreen1} />
+      <Drawer.Screen name="gameScreen2" component={gameScreen2} />
+      <Drawer.Screen name="gameScreen3" component={gameScreen3} />
+      <Drawer.Screen name="gameScreen4" component={gameScreen4} />
+      <Drawer.Screen name="Result" component={Result} />
     </Drawer.Navigator>
   );
 }

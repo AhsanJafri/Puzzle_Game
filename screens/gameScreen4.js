@@ -26,11 +26,11 @@ const Images = [
     img: 'https://1tb.favim.com/preview/7/729/7298/72989/7298962.jpg',
   },
 ];
-export default function Ashiq({navigation}) {
+export default function GameScreen4({navigation}) {
   const [hidden, setHidden] = React.useState(0); // piece to obscure
-  const [pieces, setPieces] = React.useState([0, 1, 8, 4, 7, 5, 6, 3, 2]);
+  const [pieces, setPieces] = React.useState([5, 1, 8, 4, 7, 0, 6, 3, 2]);
 
-  const [imagelist, setImagelist] = useState(1);
+  const [imagelist, setImagelist] = useState(0);
   const renderLoading = React.useCallback(<ActivityIndicator />, []);
   const onChange = React.useCallback(
     (nextPieces, nextHidden) => {
@@ -80,7 +80,7 @@ export default function Ashiq({navigation}) {
           //   }
           //   return prevState + 1;
           // })
-          navigation.navigate('gameScreen1')
+          navigation.navigate('Result')
         }>
         <Text
           style={{

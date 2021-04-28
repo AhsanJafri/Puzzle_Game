@@ -11,6 +11,7 @@ import gameScreen2 from './screens/gameScreen2';
 import gameScreen3 from './screens/gameScreen3';
 import gameScreen4 from './screens/gameScreen4';
 import Result from './screens/Result';
+console.disableYellowBox = true;
 
 const AppNavigator = createStackNavigator(
   {

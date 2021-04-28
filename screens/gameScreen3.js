@@ -36,6 +36,7 @@ export default function GameScreen3({navigation}) {
   const onChange = React.useCallback(
     (nextPieces, nextHidden) => {
       if (JSON.stringify(nextPieces) === JSON.stringify(temp)) {
+        alert('Level Completed!');
         setShowBtn(true);
       } else {
         setShowBtn(false);

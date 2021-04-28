@@ -30,12 +30,13 @@ let temp = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 export default function GameScreen3({navigation}) {
   const [hidden, setHidden] = React.useState(0); // piece to obscure
   const [pieces, setPieces] = React.useState([4, 8, 7, 5, 3, 2, 6, 0, 1]);
-  const [imagelist, setImagelist] = useState(1);
+  const [imagelist, setImagelist] = useState(0);
   const [showBtn, setShowBtn] = useState(false);
   const renderLoading = React.useCallback(<ActivityIndicator />, []);
   const onChange = React.useCallback(
     (nextPieces, nextHidden) => {
       if (JSON.stringify(nextPieces) === JSON.stringify(temp)) {
+        alert('Level Completed!');
         setShowBtn(true);
       } else {
         setShowBtn(false);
@@ -56,7 +57,7 @@ export default function GameScreen3({navigation}) {
             alignSelf: 'center',
             marginVertical: 15,
           }}>
-          PUZZLE DISNEY
+          LEVEL 5
         </Text>
       </View>
       <View style={{height: '65%', backgroundColor: 'black'}}>

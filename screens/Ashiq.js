@@ -30,13 +30,14 @@ const Images = [
 let temp = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 export default function Ashiq({navigation}) {
   const [hidden, setHidden] = React.useState(0); // piece to obscure
-  const [pieces, setPieces] = React.useState([6, 1, 5, 3, 4, 2, 0, 7, 8]);
+  const [pieces, setPieces] = React.useState([1, 0, 2, 3, 4, 5, 6, 7, 8]);
   const [imagelist, setImagelist] = useState(1);
   const [showBtn, setShowBtn] = useState(false);
   const renderLoading = React.useCallback(<ActivityIndicator />, []);
   const onChange = React.useCallback(
     (nextPieces, nextHidden) => {
       if (JSON.stringify(nextPieces) === JSON.stringify(temp)) {
+        alert('Level Completed!');
         setShowBtn(true);
       } else {
         setShowBtn(false);

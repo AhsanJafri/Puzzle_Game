@@ -29,13 +29,14 @@ const Images = [
 let temp = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 export default function GameScreen1({navigation}) {
   const [hidden, setHidden] = React.useState(0); // piece to obscure
-  const [pieces, setPieces] = React.useState([4, 1, 2, 3, 0, 5, 6, 7, 8]);
+  const [pieces, setPieces] = React.useState([4, 1, 2, 3, 7, 0, 8, 6, 5]);
   const [imagelist, setImagelist] = useState(2);
   const [showBtn, setShowBtn] = useState(false);
   const renderLoading = React.useCallback(<ActivityIndicator />, []);
   const onChange = React.useCallback(
     (nextPieces, nextHidden) => {
       if (JSON.stringify(nextPieces) === JSON.stringify(temp)) {
+        alert('Level Completed!');
         setShowBtn(true);
       } else {
         setShowBtn(false);

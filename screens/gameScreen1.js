@@ -36,7 +36,6 @@ export default function GameScreen1({navigation}) {
   const onChange = React.useCallback(
     (nextPieces, nextHidden) => {
       if (JSON.stringify(nextPieces) === JSON.stringify(temp)) {
-        alert('Level Completed!');
         setShowBtn(true);
       } else {
         setShowBtn(false);
@@ -60,7 +59,13 @@ export default function GameScreen1({navigation}) {
           LEVEL 2
         </Text>
       </View>
-      <View style={{height: '65%', backgroundColor: 'black'}}>
+      <View
+        style={{
+          height: '65%',
+          backgroundColor: 'black',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <PicturePuzzle
           size={410}
           pieces={pieces}
@@ -70,6 +75,20 @@ export default function GameScreen1({navigation}) {
           style={{resizeMode: 'center', marginVertical: 30}}
           renderLoading={renderLoading}
         />
+        {showBtn ? (
+          <Text
+            style={{
+              padding: 15,
+              textAlign: 'center',
+              fontSize: 32,
+              color: 'rgb(255,255,255)',
+              fontFamily: 'serif',
+              position: 'absolute',
+              fontWeight: 'bold',
+            }}>
+            Level Completed
+          </Text>
+        ) : null}
       </View>
       {showBtn ? (
         <TouchableOpacity

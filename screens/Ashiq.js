@@ -4,26 +4,26 @@ import {ActivityIndicator, TouchableOpacity, View, Text} from 'react-native';
 const Images = [
   {
     id: 1,
-    img: 'https://1tb.favim.com/preview/6/697/6975/69759/6975908.jpg',
+    img: 'https://wallpapercave.com/wp/wp1981940.jpg',
   },
 
   {
     id: 2,
-    img: 'https://1tb.favim.com/preview/6/660/6603/66032/6603207.jpg',
+    img: 'https://wallpapercave.com/wp/wp2155652.jpg',
   },
 
   {
     id: 3,
-    img: 'https://1tb.favim.com/preview/6/635/6355/63551/6355103.png',
+    img: 'https://wallpapercave.com/wp/wp3294537.jpg',
   },
   {
     id: 4,
-    img: 'https://1tb.favim.com/preview/7/729/7294/72941/7294149.jpg',
+    img: 'https://wallpapercave.com/wp/wp2521772.jpg',
   },
 
   {
     id: 5,
-    img: 'https://1tb.favim.com/preview/7/729/7298/72989/7298962.jpg',
+    img: 'https://wallpapercave.com/wp/wp3294573.jpg',
   },
 ];
 

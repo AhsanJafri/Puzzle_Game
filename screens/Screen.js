@@ -30,7 +30,7 @@ function Feed({navigation}) {
               marginVertical: 30,
             }}>
             <Text style={{color: '#ffff', fontSize: 30, fontWeight: 'bold'}}>
-              Puzzle Disney
+              PUZZLEISH
             </Text>
           </View>
         </View>
@@ -80,7 +80,7 @@ function CustomDrawerContent(props) {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text style={{fontSize: 25, color: '#FFFF'}}>Puzzle Disney</Text>
+        <Text style={{fontSize: 25, color: '#FFFF'}}>Puzzleish</Text>
       </View>
       <DrawerContentScrollView>
         <View style={{marginTop: 15}}>

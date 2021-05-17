@@ -16,7 +16,7 @@ export default function Result({navigation}) {
               marginVertical: 30,
             }}>
             <Text style={{color: '#ffff', fontSize: 30, fontWeight: 'bold'}}>
-              Puzzle Disney
+              PUZZLEISH
             </Text>
           </View>
         </View>
